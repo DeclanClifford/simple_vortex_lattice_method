@@ -1,4 +1,4 @@
-# simple_vortex_lattice_method
+# Simple Vortex Lattice Method
 A proof of concept vortex lattice method for modelling a thin, flat-plate finite-wing. The model is suitable for low speed aerodynamics and accurately models
 the effects of changing aspect ratio, sweep angle and dihedral angle.
 
