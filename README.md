@@ -13,6 +13,7 @@ As such it will probably be useless to most people, but is here purely to give e
 
 ## How does this work?
 See the theory outlined by N. Sandham for a very clear and concise description of the model's theory.
+
 The program, `single_lifting_surface_vlm.m`, outputs the lift coefficient, induced drag coefficient and induced drag factor of a finite wing of user specified geometry.
 These outputs
 have been chosen to make it easy to verify this model by matching them with the outputs given by N. Sandham in the [theory](https://github.com/DeclanClifford/simple_vortex_lattice_method/blob/master/theory/vortex-lattice-theory.pdf) .
