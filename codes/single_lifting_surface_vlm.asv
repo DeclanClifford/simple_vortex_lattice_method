@@ -63,12 +63,6 @@ dy = bp / N;                        % distance between trailing vortices
 % NOTE - the control point distance factor, cp is defined later, after the
 % taper ratio has been applied to each vortex element
 
-% trailing vortices aligned with free stream
-%trvort=[large;0;large*sin(alpha)];
-
-% trailing vortices fixed to lifting surface
-trvort=[large;0;0];
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%% vortex lattice method %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -160,8 +154,8 @@ else
     for i = 1 : N
         for j = 1 : N
             I = vfil(xa(:, j),xb(:, j),xc(:, i));
-            I = I + vfil(xa(:, j) + trvort, xa(:, j), xc(:, i));
-            I = I + vfil(xb(:, j), xb(:, j) + trvort, xc(:, i));
+            I = I + vfil(xa(:, j) + [large; 0; 0], xa(:, j), xc(:, i));
+            I = I + vfil(xb(:, j), xb(:, j) + [large; 0; 0], xc(:, i));
             A(i, j) = I(1) * n(1, i) + I(2) * n(2, i) + I(3) * n(3, i);
         end
     rhs(i) = - (Q(1) * n(1, i) + Q(2) * n(2, i) + Q(3) * n(3, i));
@@ -177,9 +171,9 @@ else
         for j = 1 : N
             u = u + vfil(xa(:, j), xb(:, j),bc(:, i)) * gamma(j);
             u = u + vfil(xa(:, j) +...
-                    trvort, xa(:, j), bc(:, i)) * gamma(j);
+                    [large; 0; 0], xa(:, j), bc(:, i)) * gamma(j);
             u = u + vfil(xb(:, j), xb(:, j) +...
-                    trvort, bc(:, i)) * gamma(j);
+                    [large; 0; 0], bc(:, i)) * gamma(j);
         end
         
     % vector cross product of the local velocity and bound vortex direction
