@@ -5,7 +5,7 @@ the effects of changing aspect ratio, sweep angle and dihedral angle
 ## What is this?
 This is a proof of concept vortex lattice method for a flat plate finite wing. 
 It is based on an original vortex lattice method by Professor N. Sandham at the University of Southampton. This code goes further than the original introducing wing taper,
-sweep and dihedral. The original program and theory this method is based on has been attached as [*] 
+sweep and dihedral. The original program and theory this method is based on is given [here](https://github.com/DeclanClifford/simple_vortex_lattice_method/blob/master/theory/vortex-lattice-theory.pdf) 
 
 ## Why does this exist?
 This program was made with the intention of becoming the foundation of the aerodynamic theory behind a simple flight simulator.
