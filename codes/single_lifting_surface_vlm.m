@@ -176,7 +176,9 @@ else
                     [large; 0; 0], bc(:, i)) * gamma(j);
         end
         
-    % u cross s gives the direction of the force
+    % vector cross product of the local velocity and bound vortex direction
+    % gives the direction of the force - multiplied by rho to give
+    % the force in its correct units
     s = xb(:, i) - xa(:, i);
     Fx(i) = rho * (u(2) * s(3) - u(3) * s(2)) * gamma(i);
     Fz(i) = rho * (u(1) * s(2) - u(2) * s(1)) * gamma(i);
